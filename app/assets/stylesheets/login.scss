@@ -1,0 +1,47 @@
+// Place all the styles related to the login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body{
+    background-color: #FAFDFB;
+}
+.container{
+    max-width: 920px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card-body{
+    margin: auto;
+    max-width: 700px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 8px rgb(233, 233, 233);
+    background-color: #fff;
+    border-radius: 3px;
+    border: none;
+    position: relative;
+}
+
+.login{
+    text-align: center;
+    color: #92AF42;
+}
+
+input{
+    display: block;
+    width: 100%;
+}
+
+.submit input{
+    background-color: #A2A9F3;
+    color: #fff;
+}
+
+a{
+    &:hover{
+        background-color: #C2AEEA;
+    }
+}

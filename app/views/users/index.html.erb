@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+ 
+<h1>Listing Users</h1>
+ 
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+ 
+    <tbody>
+        <tr>
+            <td><%= @users.name %></td> 
+            <td><%= link_to 'Show', @users %></td>
+            <td><%= link_to 'Edit', edit_user_path(@users) %></td>
+            <td><%= link_to 'Destroy', @users, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    </tbody>
+</table>
+ 
+<br>
+ 
+<%= link_to 'New User', new_user_path %>
