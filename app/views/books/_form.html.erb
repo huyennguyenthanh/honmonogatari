@@ -1,0 +1,25 @@
+<%= form_with model: @book do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %><br>
+  </div>
+  
+     <div class="field">
+    <%= form.label :number_of_chapters %><br>
+    <%= form.number_field :number_of_chapters %><br>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %><br>
+  </div>
+  
+   <div class="field">
+    <%= form.label :cover %><br>
+    <%= form.file_field :cover %><br>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

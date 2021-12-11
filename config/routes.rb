@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'login/create'
   get 'login/destroy'
   resources :users
+  resources :books
+  
   
   root 'home#home'
   
