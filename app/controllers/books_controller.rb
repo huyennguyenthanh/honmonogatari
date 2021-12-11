@@ -7,6 +7,11 @@ class BooksController < ApplicationController
 
   @books = if params[:term]
     Book.where('title LIKE ?', "%#{params[:term]}%")
+  elsif params[:sort] != "title"
+     Book.order(params[:sort])
+     elsif  params[:sort] != "num_of_chapters"
+     Book.order(params[:sort])
+         
   else
     Book.all
  
@@ -71,7 +76,7 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :description, :num_of_chapters, :term)
+      params.require(:book).permit(:title, :description, :num_of_chapters, :term, :sort)
     end
     
     
