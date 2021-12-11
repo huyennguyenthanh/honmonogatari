@@ -8,6 +8,7 @@ class BooksController < ApplicationController
 
   # GET /books/1 or /books/1.json
   def show
+      @chapter = Chapter.new
   end
 
   # GET /books/new
@@ -22,6 +23,7 @@ class BooksController < ApplicationController
   # POST /books or /books.json
   def create
     @book = Book.new(book_params)
+    @book.chapter = 0
 
     respond_to do |format|
       if @book.save

@@ -6,12 +6,12 @@
 </p>
 
 <p>
-  <strong>Number of pages:</strong>
+  <strong>Number of chapters:</strong>
   <%= @book.number_of_chapters %>
 </p>
 
 <p>
-  <strong>Detail:</strong>
+  <strong>Description:</strong>
   <%= @book.description %>
 </p>
 
@@ -20,6 +20,32 @@
     <%= image_tag @book.cover %>
   <% end %>
 </p>
+
+<h2>Chapter Form</h2>
+<%= form_with(model: @chapter, local: true) do |form| %>
+  <div class= "field">
+    <%= form.label :title%>
+    <%= form.text_area :title %>
+    <%= form.hidden_field :book_id, :value => @book.id %>
+  </div>
+  <div class= "field">
+    <%= form.label :content%>
+    <%= form.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<h1>Chapter List</h1>
+<ul>
+  <% @book.chapter.each do |chapter|%>
+   <li><%= link_to chapter.title, chapter%>
+     (<i><%= chapter.user.email if chapter.user%></i>)</li>
+   <% end %>
+</ul>
+
+
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

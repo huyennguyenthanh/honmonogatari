@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <strong>Book:</strong>
+  <%=link_to @chapter.book.title, @chapter.book %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @chapter.title %>
+</p>
+
+<p>
+  <strong>Content</strong>
+  <%= @chapter.content %>
+</p>
+
+
+<p><%= link_to "Delete Chapter", @chapter, method: :delete, data: { confirm: 'Are you sure?' } %></p>
